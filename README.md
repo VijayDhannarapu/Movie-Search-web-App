@@ -58,8 +58,11 @@ TO GET TRAILER VIDEO OF MOVIE:
    
 AFTER GETTING RESPONSE FROM (step -1) API, CONSOLE RESPONSE THEN YOU CAN SEE THE type , and site in that
 
-3. IF type === "Trailer" and site === "YouTube"  then in that object there is key use it
+2. IF type === "Trailer" and site === "YouTube"  then in that object there is key use it
    
 [https://www.youtube.com/embed/${KEY}?rel=0&modestbranding=1&&showinfo=0]
 
 in html use iframe tag
+
+[LinkedIn Project Video](https://www.linkedin.com/posts/dhannarapu-vijay-749073342_movie-search-web-app-built-with-html-activity-7342415204070137857-zj7_?utm_source=share&utm_medium=member_android&rcm=ACoAAFXLb2kBbrV3KjOz2tRkd6GDBkCwJo82XqI)
+
