@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Julee&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet"> 
+</head> 
+<body>
+    <section class="top">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/011/459/157/small/letter-m-alphabet-in-brush-style-png.png" alt="logo">
+        <input type="search" name="search" id="search" placeholder="Enter Movie Name">
+        <button value="day" id="bgChangeBtn" onclick="bgChange()"><i class="fa-solid fa-sun"></i></button>
+    </section>
+
+    <div class="loderPage" id="loder">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+    <p id="ErrorMessage">Network Issue </p>
+    <div class="moviesType">
+        <button id="all" onclick="displayMovies()">All</button>
+        <button id="topRated" onclick="discover()">Top rated</button>
+        <button id="watched" onclick="yourWatchedMovies()">Watched</button>
+    </div>
+    <div id="showMovies"> 
+        <!--Movies Add here -->
+    </div>
+
+    <script src="javaScript1.js"></script>
+</body>
+</html>
