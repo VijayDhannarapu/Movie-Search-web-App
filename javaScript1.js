@@ -1,11 +1,11 @@
 let allWatchedMovies = JSON.parse(localStorage.getItem("allWatchedMovies"));
-
+const movieNameTag = document.getElementById("movieName");  
 const bgButton = document.getElementById("bgChangeBtn");
 let movieName;
 
 const ErrorMessage = document.getElementById("ErrorMessage");
 const loderPage = document.getElementById("loder");
-const apiKey = "5f891aebce4e73591c440b433f3041eb";
+const apiKey = "-------- API KEY ----------";
 const userSearch = document.getElementById("search");
 const moviePoster = document.getElementById("Movieposter");
 
@@ -32,6 +32,7 @@ async function discover() {
         showMovies.innerHTML = "";
         const discoverApi = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;// top rated Api url
         const discoverData = await getData(discoverApi);
+        updateMovieName("Top Rated Movies");
         checkMovie(discoverData) // It will check , is there top rated movies and display
     }
     catch (error) {
@@ -58,6 +59,7 @@ async function getUserInput() {
         const apiurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`;
         loderPage.style.display = "flex";
         const data = await getData(apiurl);
+        updateMovieName(`${userSearch.value} Movie`);
         checkMovie(data)
     }
     catch (error) {
@@ -66,6 +68,12 @@ async function getUserInput() {
         ErrorMessage.style.display = "block";
     }
 
+}
+
+
+/* ------------- Update User Searched Movie Name ---------------- */
+function updateMovieName(mName){
+    movieNameTag.textContent = `${mName}`;
 }
 
 /* --------------- Check Movies  --------------- */
@@ -110,7 +118,6 @@ async function getDetails(data) {
 
         checkMovie(eachMovie.movieId) /*  Checking Movie is added in Watched List , if it is added isWatched is true else false  */
         function checkMovie(id) {
-
             if (allWatchedMovies !== null) {
                 for (let i = 0; i < allWatchedMovies.length; i++) {
                     if (allWatchedMovies[i]["movieId"] === id) {
@@ -180,7 +187,7 @@ window.addEventListener("load", () => {
 
 })
 
-// If user search was empty if call the topRated movies else user searched movie
+// If user search was empty it call the topRated movies else user searched movie
 function displayMovies() {
     showMovies.innerHTML = ""
     if (userSearch.value === '') {

@@ -10,7 +10,7 @@ function theam() {
 }
 
 const eachMovie = JSON.parse(localStorage.getItem("eachMovie"));
-console.log(eachMovie)
+
 const apiKey = "5f891aebce4e73591c440b433f3041eb";
 
 const Movieposter = document.getElementById("Movieposter");
